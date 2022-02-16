@@ -1,0 +1,3 @@
+joonas = input();
+
+print(joonas + '??!')
