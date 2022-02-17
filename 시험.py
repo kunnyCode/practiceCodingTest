@@ -14,4 +14,13 @@
 
 
 
+participant = ["marina", "josipa", "nikola", "vinko", "filipa", "josipa" ,"df"]
+participant2 = {'marina': 1, 'josipa': 2, 'nikola': 1, 'vinko': 1, 'filipa': 1, 'df': 1}
 
+for i in participant:
+	print(i)
+
+print('----------------------------')
+
+for i in participant2:
+	print(i)
