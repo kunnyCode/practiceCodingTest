@@ -14,13 +14,16 @@
 
 
 
-participant = ["marina", "josipa", "nikola", "vinko", "filipa", "josipa" ,"df"]
-participant2 = {'marina': 1, 'josipa': 2, 'nikola': 1, 'vinko': 1, 'filipa': 1, 'df': 1}
+# participant = ["marina", "josipa", "nikola", "vinko", "filipa", "josipa" ,"df"]
+# participant2 = {'marina': 1, 'josipa': 2, 'nikola': 1, 'vinko': 1, 'filipa': 1, 'df': 1}
 
-for i in participant:
-	print(i)
+# for i in participant:
+# 	print(i)
 
-print('----------------------------')
+# print('----------------------------')
 
-for i in participant2:
-	print(i)
+# for i in participant2:
+# 	print(i)
+
+ar = ['OOOOXOOOOXOOOOX']
+print(len(ar[0]))

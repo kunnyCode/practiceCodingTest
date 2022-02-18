@@ -8,15 +8,15 @@ ar = list(map(int, input().split()))
 # 	cnt = cnt + 1
 
 m = max(ar)
-print(m)
-ar.remove(m)
+# print(m)
+# ar.remove(m)
 
 result = []
 for i in ar:
 	result.append(i/m * 100)
-result.append(m)
+# result.append(m)
 
-print(result)
+# print(result)
 sum = 0
 for j in result:
 	sum += j
