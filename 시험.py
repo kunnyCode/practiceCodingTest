@@ -25,5 +25,5 @@
 # for i in participant2:
 # 	print(i)
 
-ar = ['OOOOXOOOOXOOOOX']
-print(len(ar[0]))
+ar = [['OOOOXOOOOXOOOOX',33,44,55]]
+print(ar[0][0])
