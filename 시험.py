@@ -25,5 +25,10 @@
 # for i in participant2:
 # 	print(i)
 
-ar = [['OOOOXOOOOXOOOOX',33,44,55]]
-print(ar[0][0])
+# ar = [['OOOOXOOOOXOOOOX',33,44,55]]
+# ar[0] = 0
+# print(ar[0])
+
+# ar = [2, 3, 4, 5] 숫자는 join이 안먹힘
+ar = ["2", "3", "4", "5"]
+print(", ".join(ar))
