@@ -30,5 +30,14 @@
 # print(ar[0])
 
 # ar = [2, 3, 4, 5] 숫자는 join이 안먹힘
-ar = ["2", "3", "4", "5"]
-print(", ".join(ar))
+# ar = ["2", "3", "4", "5"]
+# print(", ".join(ar))
+
+
+
+ar1 = set([1,2,3,4])
+ar2 = set([5,2,7,8])
+
+print(ar1 - ar2)
+print(ar1 & ar2)
+print(ar1 | ar2)
