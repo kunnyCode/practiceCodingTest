@@ -26,13 +26,13 @@ print("<",", ".join(answer)[:],">", sep='')
 
 
 # n , t =(input().split())
-# n = int(n)
-# t = int(t)
+# n = int(n) # 들어오는 배열 길이
+# t = int(t) # 몇 씩 띄어서 없애는지 그 값
 
-# nOfAr = []
-# result = []
-# cnt = 1
-# num = 0
+# nOfAr = [] # 배열 만들기
+# result = [] # 결과값이 들어오는 곳
+# cnt = 1 # 나누기를 할 숫자
+# num = 0 # 끝 숫자가 오면 돌아가기 위한 숫자
 
 # for i in range(1, n + 1):
 # 	nOfAr.append(i)
@@ -40,7 +40,6 @@ print("<",", ".join(answer)[:],">", sep='')
 # # print(nOfAr)
 
 # while len(result) < n:
-# 	7 
 # 	if nOfAr[num] != 0:
 # 		if cnt % t == 0:
 # 			if nOfAr[num] != 0:
@@ -66,6 +65,4 @@ print("<",", ".join(answer)[:],">", sep='')
 # 		print("%d" % result[i], end="")
 # 	else:
 # 		print("%d, " % result[i], end="")
-
-
 # print(">")
