@@ -35,9 +35,19 @@
 
 
 
-ar1 = set([1,2,3,4])
-ar2 = set([5,2,7,8])
+# ar1 = set([1,2,3,4])
+# ar2 = set([5,2,7,8])
 
-print(ar1 - ar2)
-print(ar1 & ar2)
-print(ar1 | ar2)
+# print(ar1 - ar2)
+# print(ar1 & ar2)
+# print(ar1 | ar2)
+
+
+# a = "dffff"
+# b = list(a)
+# print(b)
+
+
+a = "dfsfd"
+a.replace("f", "5")
+print(a)
