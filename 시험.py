@@ -48,6 +48,10 @@
 # print(b)
 
 
-a = "dfsfd"
-a.replace("f", "5")
-print(a)
+# a = "dfsfd"
+# a.replace("f", "5")
+# print(a)
+
+a ="StrinG"
+b = a.lower()
+print(b)
