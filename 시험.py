@@ -52,6 +52,8 @@
 # a.replace("f", "5")
 # print(a)
 
-a ="StrinG"
-b = a.lower()
-print(b)
+# a ="StrinG"
+# b = a.lower()
+# print(b)
+
+print(0 % 1)
