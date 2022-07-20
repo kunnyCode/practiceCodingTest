@@ -22,7 +22,7 @@ def bfs(x, y):
 		# 현재 위치에서 네 방향으로 위치 확인
 		for i in range(4):
 			nx = x + dx[i]
-			ny = x + dy[i]
+			ny = y + dy[i]
 			# 미로 찾기 공간을 벗어난 경우 무시
 			if nx < 0 or ny < 0 or nx >= n or ny >= m:
 				continue
