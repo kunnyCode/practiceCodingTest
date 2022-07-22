@@ -137,8 +137,15 @@ else:
 	print("s1과 s4는 같은 요소가 적어도 하나는 있습니다.")
 
 
-s = {1, 2, 3}
-print(f"set : {s}")
+count = [1, 2, 3, 4, 5, 6, 7, 8, 9,10]
+extract = count.pop(4)
+extract2 = count.pop(count.index(4))
+extract3 = count.pop()
+print(f"추출 count.pop(4)  : {extract}")
+print(f"추출 count.pop(count.index(4)): {extract2}")
+print(f"추출 count.pop() : {extract3}")
+print(f"count 리스트 : {count}")
+
 
 
 
