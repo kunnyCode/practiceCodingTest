@@ -10,6 +10,13 @@ print(f"s.count('k', 5) : {r2}")
 r3 = s.count('k', 4, 8)
 print(f"s.count('k', 4, 8) : {r3}")
 
+# 리스트도 count 가능
+ar = [1, 2, 3, 4, 5, 5]
+c = ar.count(3)
+print(f"3 갯수 = {c}")
+c2 = ar.count(5)
+print(f"5 갯수 = {c2}")
+
 
 # 문자열.find 사용하기
 # 문자열에서 find 메서드를 이용해서 찾고 싶으면 문자 x를 입력하면 그 문자가 존재하는 인덱스를 반환
@@ -43,11 +50,25 @@ print(f"s.rfind('m', 6) : {r9}")
 #문자열.title()
 print('abd dfsf'.title())
 
-
+# len은 문자열 리스트 둘 다 사용 가능
 ar = [1, 2, 3, 4, 5]
 string = '12345'
 print(f"ar = {len(ar)}, string = {len(string)}")
+# print(string[:3])
+# print(string[2])
 
+#join으로 문자열 뒤에 붙이기
+string = ""
+addString = "".join((string, '('))
+print(f"addString = {addString}")
+addString2 = "".join((addString, ')'))
+print(f"addString2 = {addString2}")
+
+
+string3 = 'string'
+print(string3[1:-1])
+string4 = ""
+print(len(string4))
 
 
 
