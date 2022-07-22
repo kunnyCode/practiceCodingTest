@@ -65,10 +65,80 @@ addString2 = "".join((addString, ')'))
 print(f"addString2 = {addString2}")
 
 
-string3 = 'string'
-print(string3[1:-1])
-string4 = ""
-print(len(string4))
+# string3 = 'string'
+# print(string3[1:-1])
+# string4 = ""
+# print(len(string4))
+
+
+# # 튜플 인덱싱 확인
+# tuple = (1, 2, 3, 4, 5)
+# print(tuple[0], tuple[4])
+# print(tuple[1:3])
+
+# 딕셔너리
+fruit = {'apple': 5, 'grape': 10, 'banana': 7, 'peach': 3, 'melon': 2}
+
+print(f".items() -> {fruit.items()}")
+print(f".keys() -> {fruit.keys()}")
+print(f".values() -> {fruit.values()}")
+
+
+
+# 파이썬 집합
+s1 = set({1, 2, 3})
+s2 = set([1, 2, 3])
+s3 = {1, 2, 3}
+# 세개 다 같은 집합을 만듭니다.
+
+# 비어있는 집합을 만들기 위해선 아래와 같이 사용
+s4 = set()
+
+
+s1 = set([1, 2, 3, 4, 5])
+s2 = set([4, 5, 6, 7, 8])
+s3 = {1, 2, 3, 4, 5}
+s4 = {6, 7, 8, 9, 10}
+
+# 교집합 메서드 intersection
+print(f"교집합 메서드(s1.intersection(s2)) : {s1.intersection(s2)}")
+# 교집합 연산자 &
+print(f"교집합 연산자(s1 & s2) : {s1 & s2}")
+# intersection = s1.intersection(s2)
+# print(list(map(str, intersection)))
+
+
+# 합집합 메서드 union
+print(f"합집합 메서드(s1.union(s2)) : {s1.union(s2)}")
+# 합집합 연산자 |
+print(f"합집합 연산자 | : {s1 | s2}")
+
+
+# 차집합 메서드 difference
+print(f"차집합 메서드s1.difference(s2) : {s1.difference(s2)}")
+# 차집합 연산자 -
+print(f"차집한 연산자 - : {s1 - s2}")
+
+
+# 집합이 아예 다른지
+if s1.isdisjoint(s2):
+	print("s1과 s2는 같은 요소가 하나도 없습니다.")
+else:
+	print('s1과 s2는 같은 요소가 적어도 하나는 있습니다.')
+
+if s1.isdisjoint(s3):
+	print("s1과 s3는 같은 요소가 하나도 없습니다.")
+else:
+	print("s1과 s3는 같은 요소가 적어도 하나는 있습니다.")
+
+if s1.isdisjoint(s4):
+	print("s1과 s4는 같은 요소가 하나도 없습니다.")
+else:
+	print("s1과 s4는 같은 요소가 적어도 하나는 있습니다.")
+
+
+s = {1, 2, 3}
+print(f"set : {s}")
 
 
 
