@@ -36,6 +36,18 @@ print(f"s.rfind('m', 6) : {r9}")
 
 
 
+#문자열.upper()
+#문자열.lower()
+#문자열.swapcase()
+#문자열 capitalize()
+#문자열.title()
+print('abd dfsf'.title())
+
+
+ar = [1, 2, 3, 4, 5]
+string = '12345'
+print(f"ar = {len(ar)}, string = {len(string)}")
+
 
 
 
