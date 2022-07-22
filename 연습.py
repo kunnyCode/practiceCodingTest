@@ -1,15 +1,65 @@
-num = input()
+# # 문자열.count 사용하기
+s = 'blackmask'
 
-result = int(num[0])
+r1 = s.count('k')
+print(f"s.count('k') : {r1}")
 
-for i in range(1, len(num)):
-	j = int(num[i])
-	if j <= 1 or result <= 1:
-		result += j
-	else:
-		result *= j
+r2 = s.count('k', 5)
+print(f"s.count('k', 5) : {r2}")
 
-print(result)
+r3 = s.count('k', 4, 8)
+print(f"s.count('k', 4, 8) : {r3}")
+
+
+# 문자열.find 사용하기
+# 문자열에서 find 메서드를 이용해서 찾고 싶으면 문자 x를 입력하면 그 문자가 존재하는 인덱스를 반환
+# 없으면 -1 반환
+# 찾고 싶은 문자가 여러개라면 맨 처음 찾은 인덱스 반환
+
+r4 = s.find('k')
+print(f"s.find('k') : {r4}")
+
+r5 = s.find('k', 5)
+print(f"s.find('k', 4) : {r5}")
+
+r6 = s.find('k', 5, 9)
+print(f"s.find('k', 5, 9) : {r6}")
+
+r7 = s.rfind('k')
+print(f"s.rfind('k') : {r7}")
+
+r8 = s.rfind('k', 4, 8)
+print(f"s.rfind('k', 4, 8) : {r8}")
+
+r9 = s.rfind('m', 6)
+print(f"s.rfind('m', 6) : {r9}")
+
+
+
+
+
+
+
+# from collections import deque
+# queue = deque()
+# # print(queue)
+# # queue.popleft()
+# print(queue)
+# queue.append(2)
+# print(queue)
+
+# num = input()
+
+# result = int(num[0])
+
+# for i in range(1, len(num)):
+# 	j = int(num[i])
+# 	if j <= 1 or result <= 1:
+# 		result += j
+# 	else:
+# 		result *= j
+
+# print(result)
 
 
 
