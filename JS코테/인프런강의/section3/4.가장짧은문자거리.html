@@ -7,6 +7,29 @@
 
 <body>
 	<script>
+		// // 이중 for문을 사용해서 풀기
+		// function solution(s, t) {
+		// 	let answer = [];
+
+		// 	for (let i = 0; i < s.length; i++) {
+		// 		if (s[i] === t) {
+		// 			answer.push(0)
+		// 			continue;
+		// 		} else {
+		// 			let candi = []
+		// 			for (let j = 0; j < s.length; j++) {
+		// 				if (s[j] === t) {
+		// 					candi.push(Math.abs(i - j))
+		// 				}
+		// 			}
+		// 			answer.push(Math.min(...candi))
+		// 		}
+		// 	}
+
+		// 	return answer
+		// }
+
+
 		function solution(s, t) {
 			let answer = [];
 			let p = 1000;
