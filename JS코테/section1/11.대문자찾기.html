@@ -1,0 +1,28 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>출력결과</title>
+</head>
+
+<body>
+	<script>
+		function solution(s) {
+			let answer = 0;
+			for (let x of s) {
+				//let num=x.charCodeAt();
+				//if(num>=65 && num<=90) answer++;
+				//소문자는 97~122까지라고 하네요..
+				if (x === x.toUpperCase()) answer++;
+				// x.toUpperCase()는 기존 x에 대문자 값을 넣는 것이 아니라 새롭게 대문자를 생성함(리턴함)
+			}
+
+			return answer;
+		}
+
+		let str = "KoreaTimeGood";
+		console.log(solution(str));
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>출력결과</title>
+</head>
+
+<body>
+	<script>
+		// 객체로 풀어보기
+		//https://www.delftstack.com/ko/howto/javascript/check-if-key-exists-in-javascript/
+		//in 연산자, hasOwnProperty 메서드
+		function solution(s) {
+			let obj = {}
+
+			for (i of s) {
+				if (i in obj) {
+					obj[i] += 1
+				} else {
+					obj[i] = 1
+				}
+			}
+
+			answer = Object.keys(obj).toString().replace(/,/g, "")
+
+			return answer
+
+		}
+
+
+		// function solution(s) {
+		// 	let answer = "";
+		// 	//console.log(s.indexOf("K"));
+		// 	for (let i = 0; i < s.length; i++) {
+		// 		//console.log(s[i], i, s.indexOf(s[i]));
+		// 		if (s.indexOf(s[i]) === i) answer += s[i];
+		// 	}
+		// 	return answer;
+		// }
+		console.log(solution("ksekkset"));
+	</script>
+</body>
+
+</html>

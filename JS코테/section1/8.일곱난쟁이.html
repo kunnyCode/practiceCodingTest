@@ -7,19 +7,58 @@
 
 <body>
 	<script>
+		// 다른 분이 써주신 방법(이중포문 break로 탈출하는)
 		function solution(arr) {
 			let answer = arr;
-			let sum = answer.reduce((a, b) => a + b, 0);
-			for (let i = 0; i < 8; i++) {
+			let sum = arr.reduce((a, b) => a + b, 0);
+
+			// 이중 for문 탈출하는 법
+			endOfCircuit: for (let i = 0; i < 8; i++) {
 				for (let j = i + 1; j < 9; j++) {
-					if ((sum - (answer[i] + answer[j])) == 100) {
+					if (sum - (answer[i] + answer[j]) === 100) {
 						answer.splice(j, 1);
 						answer.splice(i, 1);
+						break endOfCircuit;
 					}
 				}
 			}
+
 			return answer;
 		}
+
+
+		// //연습
+		// function solution(arr) {
+		// 	let answer = arr
+		// 	let sum = arr.reduce((a, b) => a + b, 0);
+
+		// 	for (let i = 0; i < 8; i++) {
+		// 		for (let j = i + 1; j < 9; j++) {
+		// 			if ((sum - (arr[i] + arr[j])) === 100) {
+		// 				arr.splice(j, 1);
+		// 				arr.splice(i, 1);
+		// 			}
+		// 		}
+		// 	}
+
+		// 	return answer;
+		// }
+
+
+
+		// function solution(arr) {
+		// 	let answer = arr;
+		// 	let sum = answer.reduce((a, b) => a + b, 0);
+		// 	for (let i = 0; i < 8; i++) {
+		// 		for (let j = i + 1; j < 9; j++) {
+		// 			if ((sum - (answer[i] + answer[j])) == 100) {
+		// 				answer.splice(j, 1);
+		// 				answer.splice(i, 1);
+		// 			}
+		// 		}
+		// 	}
+		// 	return answer;
+		// }
 
 		let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
 		console.log(solution(arr));
