@@ -7,6 +7,31 @@
 
 <body>
 	<script>
+		/*
+		// 객체를 통해 풀어보기
+		function solution(s) {
+			answer = ""
+			obj = {}
+			for (let i = 0; i < s.length; i++) {
+				if (obj.hasOwnProperty(s[i])) {
+					obj[s[i]] += 1
+				} else {
+					obj[s[i]] = 1
+				}
+			}
+
+			for (key in obj) {
+				answer += key
+
+				if (obj[key] > 1) {
+					answer += obj[key]
+				}
+			}
+			return answer
+		}
+		*/
+
+
 		function solution(s) {
 			let answer = "";
 			let cnt = 1;
@@ -21,6 +46,7 @@
 			}
 			return answer;
 		}
+
 
 		let str = "KKHSSSSSSSE";
 		console.log(solution(str));
