@@ -9,6 +9,8 @@
 	<script>
 		function solution(arr1, arr2) {
 			let answer = [];
+			// sort()에 콜백함수를 넣지 않으면 배열 안에 있는 원소가 문자열이 되어서 나옴
+			// 또한 두자리 수 부터는 [1, 10, 11, 2, 29, 3, 33, 4, 5]이런 식으로 사전순으로 정렬됨
 			arr1.sort((a, b) => a - b);
 			arr2.sort((a, b) => a - b);
 			let p1 = p2 = 0;
