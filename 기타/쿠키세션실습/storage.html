@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<p>스토리지 세팅을 합니다</p>
+	<button onclick="location.href='storage2.html'">버튼</button>
+	<br>
+	<br>
+	<script>
+		// 브라우저가 storage를 지원하는지
+		if (typeof Storage !== undefined) {
+			//localStorage
+			localStorage.setItem('name', 'yeokeon');
+			//sessionStorage
+			sessionStorage.setItem('lastName', 'Yoon')
+
+			//배열이나 객체를 스토리지에 저장하고 싶은 경우
+			arr = ['a', 'b']
+			obj = {
+				a: 1,
+				b: 2
+			}
+
+			localStorage.setItem('arr', JSON.stringify(arr))
+			sessionStorage.setItem('obj', JSON.stringify(obj))
+		}
+
+		document.write('스토리지 세팅을 완료했습니다.')
+	</script>
+</body>
+
+</html>

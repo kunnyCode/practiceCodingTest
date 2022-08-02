@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<p>세팅되었던 스토리지 값을 가져옵니다.</p>
+	<button onclick="location.href='storage2.html'">버튼</button>
+	<br>
+	<br>
+	<script>
+		console.log(localStorage.getItem('name'))
+		console.log(sessionStorage.getItem('lastName'))
+		console.log(JSON.parse(localStorage.getItem('arr')))
+		console.log(JSON.parse(sessionStorage.getItem('obj')))
+
+		document.write(localStorage.getItem('name'))
+		document.write(sessionStorage.getItem('lastName'))
+		document.write(JSON.parse(localStorage.getItem('arr')))
+		document.write(JSON.parse(sessionStorage.getItem('obj')))
+	</script>
+</body>
+
+</html>
