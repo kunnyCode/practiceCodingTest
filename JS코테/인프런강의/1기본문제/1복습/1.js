@@ -1,5 +1,7 @@
-function solution(a, b) {
-  return `${a + b}번 아직 복습하지 않았소.`;
+function solution(a, b, c) {
+  const firstCompare = Math.min(a, b);
+  const lastCompare = Math.min(firstCompare, c);
+  return lastCompare;
 }
 
-console.log(solution(1, 0));
+console.log("1번 문제 답:", solution(6, 5, 11));
