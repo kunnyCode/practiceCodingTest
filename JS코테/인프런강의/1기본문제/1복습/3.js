@@ -1,5 +1,7 @@
-function solution(a, b) {
-  return `${a + b}번 아직 복습하지 않았소.`;
+function solution(x) {
+  const howManyDasNeeded = Math.ceil(x / 12);
+  return howManyDasNeeded;
 }
 
-console.log(solution(3, 0));
+console.log("3번 문제 답:", solution(25));
+console.log("3번 문제 답:", solution(178));

@@ -1,5 +1,5 @@
-function solution(a, b) {
-  return `${a + b}번 아직 복습하지 않았소.`;
+function solution(arr) {
+  return Math.min(...arr);
 }
 
-console.log(solution(5, 0));
+console.log("5번 문제 답:", solution([5, 3, 7, 11, 2, 15, 17]));

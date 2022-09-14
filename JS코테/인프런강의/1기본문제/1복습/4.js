@@ -1,5 +1,10 @@
-function solution(a, b) {
-  return `${a + b}번 아직 복습하지 않았소.`;
+function solution(x) {
+  let sum = 0;
+  for (let i = 1; i <= x; i++) {
+    sum += i;
+  }
+  return sum;
 }
 
-console.log(solution(4, 0));
+console.log("4번 문제 답:", solution(6));
+console.log("4번 문제 답:", solution(10));
