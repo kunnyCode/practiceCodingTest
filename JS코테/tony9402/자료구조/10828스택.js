@@ -1,3 +1,5 @@
+// https://www.acmicpc.net/problem/10828
+
 //readline 다루기가 힘듦
 //switch에서 break를 넣지 않은 실수를 했
 //따로따로 console.log를 찍으면 시간초과가 뜸
