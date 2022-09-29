@@ -1,3 +1,5 @@
+// https://school.programmers.co.kr/learn/courses/30/lessons/42627
+
 function solution(jobs) {
   const count = jobs.length;
   const minHeap = new MinHeap();
