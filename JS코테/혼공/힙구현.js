@@ -20,7 +20,7 @@ class MinHeap {
     let curIdx = this.heap.length - 1;
     let parIdx = Math.floor(curIdx / 2);
 
-    while (curIdx > 1 && this.heap[parIdx] < this.heap[curIdx]) {
+    while (curIdx > 1 && this.heap[parIdx] > this.heap[curIdx]) {
       this.swap(parIdx, curIdx);
       curIdx = parIdx;
       parIdx = Math.floor(curIdx / 2);
@@ -51,8 +51,16 @@ class MinHeap {
       this.heap[leftIdx] < this.heap[curIdx] ||
       this.heap[rightIdx] < this.heap[curIdx]
     ) {
-      const minIdx =
-        this.heap[leftIdx] > this.heap[rightIdx] ? rightIdx : leftIdx;
+      // const minIdx =
+      //   this.heap[leftIdx] > this.heap[rightIdx] ? rightIdx : leftIdx;
+
+      let minIdx;
+
+      if (!this.heap[rightIdx]) {
+        minIdx = leftIdx;
+      } else {
+        minIdx = this.heap[leftIdx] > this.heap[rightIdx] ? rightIdx : leftIdx;
+      }
 
       [this.heap[minIdx], this.heap[curIdx]] = [
         this.heap[curIdx],

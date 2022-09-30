@@ -87,8 +87,13 @@ class MaxHeap {
       this.heap[leftIdx] > this.heap[curIdx] ||
       this.heap[rightIdx] > this.heap[curIdx]
     ) {
-      const maxIdx =
-        this.heap[leftIdx] > this.heap[rightIdx] ? leftIdx : rightIdx;
+      let maxIdx;
+
+      if (!this.heap[rightIdx]) {
+        maxIdx = leftIdx;
+      } else {
+        maxIdx = this.heap[leftIdx] > this.heap[rightIdx] ? leftIdx : rightIdx;
+      }
 
       this.swap(maxIdx, curIdx);
 
