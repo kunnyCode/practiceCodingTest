@@ -1,33 +1,79 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>출력결과</title>
-    </head>
-    <body>
-        <script>
-            function solution(n){
-                let answer=[];
-                let ch=Array.from({length:n+1}, ()=>0);
-                function DFS(L){
-                    if(L===n+1){
-                        let tmp="";
-                        for(let i=1; i<=n; i++){
-                            if(ch[i]===1) tmp+=(i+" ");
-                        }
-                        if(tmp.length>0) answer.push(tmp.trim());
+
+<head>
+    <meta charset="UTF-8">
+    <title>출력결과</title>
+</head>
+
+<body>
+    <script>
+        function solution(a, k) {
+            n = a.length
+            let answer = [];
+            let ch = Array.from({
+                length: n + 1
+            }, () => 0);
+
+            function DFS(L) {
+                if (L === n + 1) {
+                    let tmp = [];
+                    for (let i = 0; i < n; i++) {
+                        if (ch[i + 1] === 1) tmp.push(a[i]);
                     }
-                    else{
-                        ch[L]=1;
-                        DFS(L+1);
-                        ch[L]=0;
-                        DFS(L+1);
-                    }
+                    if (tmp.length > 0) answer.push(tmp);
+                } else {
+                    ch[L] = 1;
+                    DFS(L + 1);
+                    ch[L] = 0;
+                    DFS(L + 1);
                 }
-                DFS(1);
-                return answer;
+            }
+            DFS(1);
+
+            let longestArr = 0
+            for (let arr of answer) {
+                const sum = arr.reduce((acc, el) => acc + el)
+                if (sum <= k) {
+                    longestArr = Math.max(longestArr, arr.length)
+                }
             }
 
-            console.log(solution(3));
-        </script>
-    </body>
+            console.log(answer)
+            return longestArr;
+        }
+
+        console.log(solution([3, 1, 2, 1], 4));
+    </script>
+</body>
+
 </html>
+
+
+
+
+
+<!-- function solution(n) {
+    let answer = [];
+    let ch = Array.from({
+        length: n + 1
+    }, () => 0);
+
+    function DFS(L) {
+        if (L === n + 1) {
+            let tmp = [];
+            for (let i = 1; i <= n; i++) {
+                if (ch[i] === 1) tmp.push(i);
+            }
+            if (tmp.length > 0) answer.push(tmp);
+        } else {
+            ch[L] = 1;
+            DFS(L + 1);
+            ch[L] = 0;
+            DFS(L + 1);
+        }
+    }
+    DFS(1);
+    return answer;
+}
+
+console.log(solution(3)); -->
