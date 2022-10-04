@@ -6,32 +6,34 @@ let input = fs.readFileSync("./dev/stdin/1343.txt").toString().trim();
 input = input.split(".");
 let answer = "";
 
-for (let str of input) {
+for (let i = 0; i < input.length; i++) {
   if (answer === -1) break;
+  let s = input[i].length;
 
-  while (str.length > 0) {
-    if (str > 3) {
-      let count4 = Math.floor(str / 4);
-      if (str % 4 === 1 || str % 4 === 3) {
+  while (s > 0) {
+    if (s > 3) {
+      let count4 = Math.floor(s / 4);
+      if (s % 4 === 1 || s % 4 === 3) {
         answer = -1;
         break;
-      } else if (str % 4 === 2) {
+      } else if (s % 4 === 2) {
         answer += "AAAA".repeat(count4);
         answer += "BB";
-        str = str.slice(4 * count4 + 2);
+        s = s - (4 * count4 + 2);
       } else {
         answer += "AAAA".repeat(count4);
-        str = str.slice(4 * count4);
+        s = s - 4 * count4;
       }
-    } else if (str === 2) {
+    } else if (s === 2) {
       answer += "BB";
-      str = str.slice(2);
+      s = s - 2;
     } else {
       answer = -1;
       break;
     }
   }
-  answer += ".";
+
+  if (i !== input.length - 1 && answer !== -1) answer += ".";
 }
 
 console.log(answer);
