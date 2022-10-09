@@ -28,12 +28,12 @@ function max_abs() {
   return max;
 }
 
-function re(cnt, n, start) {
+function re(cnt, n) {
   if (cnt === n) {
     result.push(list.join(" "));
     return;
   }
-  for (let i = start; i < n; i++) {
+  for (let i = 0; i < n; i++) {
     if (!check[i]) {
       check[i] = true;
       list[cnt] = numbers[i];
@@ -43,8 +43,7 @@ function re(cnt, n, start) {
   }
 }
 
-re(0, n, 0);
-
+re(0, n);
 console.log(max_abs());
 
 // 결국 이걸로 풀지 못함
