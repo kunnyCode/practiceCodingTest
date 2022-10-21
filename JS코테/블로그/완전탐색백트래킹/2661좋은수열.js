@@ -1,3 +1,48 @@
+// 혼자 못 품
+// const fs = require("fs");
+// let input = fs.readFileSync("./dev/stdin/2661.txt").toString().trim();
+// input = parseInt(input);
+
+// let answer = "";
+// let temp = "";
+// function recursion() {
+//   if (temp.length === input) {
+//     answer = temp;
+//     return;
+//   } else {
+//     for (let i = 1; i <= 3; i++) {
+//       temp = temp + i;
+//       // console.log("re", temp, checkOverlap(temp, 1));
+//       if (temp.length === 1 || checkOverlap(temp, 1)) {
+//         recursion();
+//         break;
+//       } else {
+//         temp = temp.slice(0, -1);
+//       }
+//     }
+//   }
+// }
+
+// function checkOverlap(temp, level) {
+//   if (level > temp.length / 2) {
+//     return true;
+//   } else {
+//     const prev = temp.slice(temp.length - level * 2, temp.length - level);
+//     const next = temp.slice(temp.length - level, temp.length);
+//     // console.log(temp, level, prev, next);
+//     if (prev === next) {
+//       // console.log("같다.");
+//       return false;
+//     }
+//     const flag = checkOverlap(temp, level + 1);
+//     if (flag) return true;
+//     else return false;
+//   }
+// }
+
+// recursion();
+// console.log(answer, temp);
+
 const fs = require("fs");
 let input = fs.readFileSync("./dev/stdin/2661.txt").toString().trim();
 
