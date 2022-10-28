@@ -1,88 +1,85 @@
-// 실패!
-// const fs = require("fs");
-// const input = fs
-//   .readFileSync("./dev/stdin/14502.txt")
-//   .toString()
-//   .trim()
-//   .split("\n");
+const fs = require("fs");
+const input = fs
+  .readFileSync("./dev/stdin/14502.txt")
+  .toString()
+  .trim()
+  .split("\n");
 
-// const [N, M] = input.shift().split(" ").map(Number);
-// const lab = input.map((el) => el.split(" ").map(Number));
-// console.log(N, M, lab);
+const [N, M] = input.shift().split(" ").map(Number);
+const lab = input.map((el) => el.split(" ").map(Number));
+const visited = Array.from({ length: N }, () => new Array(M).fill(false));
 
-// let max = Number.MIN_SAFE_INTEGER;
+let max = Number.MIN_SAFE_INTEGER;
 
-// function spreadVirus(walls) {
-//   let safeZoneNum = 0;
-//   const tempLab = [...lab];
-//   const queue = [];
-//   const dx = [0, 0, 1, -1];
-//   const dy = [1, -1, 0, 0];
-//   for (const wall of walls) {
-//     tempLab[wall[0]][wall[1]] = 1;
-//   }
+function spreadVirus(walls, check) {
+  let safeZoneNum = 0;
+  const visited = check.map((v) => [...v]);
+  const tempLab = walls.map((v) => [...v]);
+  const queue = [];
+  const dx = [-1, 1, 0, 0];
+  const dy = [0, 0, -1, 1];
 
-//   for (let i = 0; i < N; i++) {
-//     for (let j = 0; j < M; j++) {
-//       if (tempLab[i][j] === 2) {
-//         queue.push([i, j]);
+  for (let i = 0; i < N; i++) {
+    for (let j = 0; j < M; j++) {
+      if (tempLab[i][j] === 2) {
+        queue.push([i, j]);
+        visited[i][j] = true;
 
-//         while (queue.length > 0) {
-//           const [x, y] = queue.shift();
-//           tempLab[x][y] = 3;
-//           for (let k = 0; k < 4; k++) {
-//             const nx = x + dx;
-//             const ny = y + dy;
-//             if (
-//               nx >= 0 &&
-//               ny >= 0 &&
-//               nx < N &&
-//               ny < M &&
-//               tempLab[nx][ny] === 0
-//             ) {
-//               queue.push([nx, ny]);
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
+        while (queue.length > 0) {
+          const [x, y] = queue.shift();
+          for (let k = 0; k < 4; k++) {
+            const nx = x + dx[k];
+            const ny = y + dy[k];
+            if (
+              nx >= 0 &&
+              ny >= 0 &&
+              nx < N &&
+              ny < M &&
+              visited[nx][ny] === false &&
+              tempLab[nx][ny] === 0
+            ) {
+              queue.push([nx, ny]);
+              visited[nx][ny] = true;
+              tempLab[nx][ny] = 2;
+            }
+          }
+        }
+      }
+    }
+  }
 
-//   for (const l of tempLab) {
-//     if (l === 0) safeZoneNum++;
-//   }
+  for (let i = 0; i < N; i++) {
+    for (let j = 0; j < M; j++) {
+      if (tempLab[i][j] === 0) {
+        safeZoneNum++;
+      }
+    }
+  }
 
-//   return safeZoneNum;
-// }
+  return safeZoneNum;
+}
 
-// let walls = [];
-// function findOptimumWalls(x, y) {
-//   if (walls.length === 3) {
-//     // 바이러스 퍼트려 얼마나 감염되는지 확인
-//     // console.log(walls);
-//     const safeZone = spreadVirus(walls);
-//     // console.log(safeZone);
-//     max = Math.max(max, safeZone);
-//     return;
-//   } else {
-//     for (let i = x; i < N; i++) {
-//       for (let j = y; j < M; j++) {
-//         console.log(i, j);
-//         if (lab[i][j] === 0) {
-//           walls.push([i, j]);
-//         }
-//         if (y < M - 1) {
-//           findOptimumWalls(i, j + 1);
-//           walls.pop();
-//         } else if (y === M - 1) {
-//           findOptimumWalls(i + 1, 0);
-//           walls.pop();
-//         }
-//       }
-//     }
-//   }
-// }
+let cnt = 3;
+function findOptimumWalls(x, y) {
+  if (cnt === 0) {
+    const safeZoneNum = spreadVirus(lab, visited);
+    max = Math.max(max, safeZoneNum);
+    return;
+  } else {
+    for (let i = x; i < N; i++) {
+      for (let j = y; j < M; j++) {
+        if (lab[i][j] === 0) {
+          cnt--;
+          lab[i][j] = 1;
+          findOptimumWalls(x, y);
+          cnt++;
+          lab[i][j] = 0;
+        }
+      }
+    }
+  }
+}
 
-// findOptimumWalls(0, 0);
+findOptimumWalls(0, 0);
 
-// // console.log(lab);
+console.log(max);
