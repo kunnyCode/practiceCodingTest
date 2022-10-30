@@ -11,7 +11,6 @@ const input = fs
 const N = parseInt(input.shift());
 const space = input.map((el) => el.split(" ").map(Number));
 const checkDistance = Array.from({ length: N }, () => new Array(N).fill(0));
-const visited = Array.from({ length: N }, () => new Array(N).fill(false));
 let totalDistance = 0;
 let shark = 2;
 let ate = 0;
